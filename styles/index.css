@@ -1,0 +1,137 @@
+/**
+contain template style code writedn by Austine Samuel software developer Nigeria*/
+
+:root{
+    --color:rgb(0, 140, 255);
+}
+*[icon]{
+width:30px;
+height:30px;
+border-radius:15px;
+display:inline-flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+
+*[icon]:hover{
+    background:white;
+    color:var(--color);
+    border:1px solid var(--color);
+}
+nav{
+    align-items: center;
+    background:var(--color) !important;
+    color:white;
+}
+nav *{
+    color:white;
+}
+
+.body{
+    margin-top:20px;
+    padding:10px;
+}
+#message, .app{
+    background:rgb(242, 241, 245);
+    border:1px solid rgb(233, 232, 237);;
+    color:rgb(122, 118, 143);
+    margin: 0 auto;
+    width:100%;
+box-shadow:1px 1px 10px 0px rgb(255, 255, 255);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.app{
+    min-height:300px;
+    box-shadow:0px 0px 10px 0px rgb(242, 241, 245);
+    background:white;
+
+}
+
+.myname{
+    color:var(--color);
+    
+}
+
+.input .tableHeading{
+    color:var(--color);
+}
+.table, .form{
+    width:95%;
+    max-width:600px;
+    border-radius: 10px;
+    margin:0 auto;
+    box-shadow:1px 1px 10px 0px rgb(219, 221, 228);
+}
+table tr{
+    border-bottom:1px solid white;
+}
+table{
+    width:100%;
+}
+table tr td{
+    border:1px solid rgb(150, 149, 173);
+    min-width:30%;
+}
+
+
+table tr:nth-child(1) td{
+    background:rgb(66, 66, 74); 
+    color:white; 
+    }
+    .questionCtn {
+        padding:10px;
+    }
+    .questionCtn button,#go{
+        min-width:50px;
+        border-radius:20px;
+        border:1px solid rgb(209, 207, 224);
+    }    
+    
+    .questionCtn button:hover,#go{
+        background:rgb(197, 195, 213);
+    }
+
+    .questionCtn button:active,#go{
+        color:var(--color);
+        text-decoration:underline;
+    }
+.questionCtn button[active],#go{
+background:var(--color);
+color:white;
+}
+#go{
+    max-width:auto;
+    min-width: auto;
+    margin-left:9px;
+}
+
+#go:hover{
+background:none;
+color:var(--color);
+border:1px solid rgb(209, 207, 222);
+}
+.form .formInput{
+    
+    width:100%;
+    max-width:600px;
+    margin:0 auto;
+    border-radius:10px;
+    border:1px solid rgb(233, 223, 223);
+    padding:10px;
+}
+.form .formInput .fInput{
+    display:flex;
+    border-bottom:1px solid rgb(223, 223, 231);
+}
+.form .formInput .fInput span{
+padding:5px;
+background:rgb(66, 66, 74);  
+color:white;
+}
+
+
+.form .formInput{
+    margin-top:10px ;
+}

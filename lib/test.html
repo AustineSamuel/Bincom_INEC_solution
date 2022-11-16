@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="cssLibrary.css">
+  <link rel="stylesheet" href="w3css.css">
+
+  <script src="angular-1.8.2/angular.js"></script>
+  <script src="angular-1.8.2/angular-animate.js"></script>
+  <style type="text/css" media="all">
+    div{
+      background:red;
+      height:300px;
+      
+      transition:all;
+     transition-duration:0.5s;
+      width:60%;
+    }
+    div.ng-hide{
+      background:blue;
+      height:0px !important;
+    }
+    
+    div.ng-animate-enter{
+      opacity:0;
+      background:yellow;
+      height:50px;
+      margin-left:-50%;
+    }
+    div.ng-animate-enter-active{
+      opacity: 1;
+      background: yellow;
+      height: 50px;
+      margin-left: -50%;
+    }
+    
+  </style>
+ 
+</head><!--end head-->
+<body ng-app="app" ng-controller="ctr">
+<nav class="flexBetween nav">
+  <input type="checkbox" ng-model="myCheck">
+<div ng-hide="myCheck" ng-repeat="i in [1,2,3,4]">smart</div>
+
+</nav>
+
+</body>
+
+
+<script src="MfunctionsLap.js"></script>
+<script>
+ const app=angular.module("app",["ngAnimate"]);
+ app.controller("ctr",function($scope){
+    console.log($scope.myCheck)
+ })
+  
+</script>
+</html>
