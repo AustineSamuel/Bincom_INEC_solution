@@ -29,21 +29,29 @@ function getPullingUnits(){
 
 
  $party_list=getTable('party');
-
+$party_list_abbr=[];
+foreach($party_list as  $partyAbbr){
+    array_push($party_list_abbr,$partyAbbr['partyid']);
+}
  getPullingUnits(); 
  if($_SERVER['REQUEST_METHOD']=='POST'){
     if(isset($_POST['polling_unit_id'])){
 //DATA AVAILABLE : try to insert data 
 //$polling_units_id_selected_by_user=$_POST['polling_unit_id'];
 $polling_unit_id=trim($_POST['polling_unit_id']);
-$result_id=floor(rand()*999);
-$party=trim($_POST['party']);
-$score=trim($_POST['score']);
-$user=trim($_POST['enteret_by_user']);
-$date=strval(localtime());
+$date=strval(localtime()[0]);
 $ip=$_POST['ip'];
-if(!in_array(strtoupper($party),$party_list))exit ("party name not in the server");
-$insert="INSERT INTO announced_pu_results(
+foreach($party_list as $party){//inset all
+    $party=$party['partyid'];
+    
+$result_id=floor(rand()*999);
+$score=trim($_POST['score_'.$party]);
+$user=trim($_POST['user_'.$party]);
+if(!in_array(strtoupper($party),$party_list_abbr)){
+    exit("party name not in the server please try again");
+
+}
+$insert=$con->query("INSERT INTO announced_pu_results(
     polling_unit_uniqueid,
     result_id,
     party_abbreviation,
@@ -56,10 +64,21 @@ VALUES(
     '$polling_unit_id',
     $result_id,
     '$party',
-    '$score',
+    $score,
     '$user',
     '$date',
     '$ip'
-)";
+)");
+if($insert){
+  //  print_r($con);
+  //  echo 'saved';
+}
+else{
+    echo 'fail';
+    echo $con->error;
+    echo '<br><br>';
+}
  }
+
+    }//end loop
 }

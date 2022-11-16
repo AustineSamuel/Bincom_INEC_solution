@@ -43,9 +43,9 @@ require_once '../backendsScripts/question3.solution.php';
 
     <div class="body">
 <div class="w3-padding w3-round" id="message">
-question 1
+question 3
 <article>
-    this is bla bla
+Create a page to be used store result forall parties for a new polling unit
 </article>
 </div>
 
@@ -69,6 +69,7 @@ question 1
 
         <div class="flexStart ">
     <select  name='polling_unit_id' class="w3-input w3-block">
+        <option selected></option>
         <?php //showing pollling units to select
 
         for($i=0;$i<count($polling_units);$i++){
@@ -100,7 +101,7 @@ question 1
 
 
 <?php 
-for($i=0; $i<=count($party_list); $i++){
+for($i=0; $i<count($party_list); $i++){
     $party=$party_list[$i];
     $partyname=$party['partyname'];
     $partyAbbr=$party['partyid'];
@@ -110,14 +111,14 @@ for($i=0; $i<=count($party_list); $i++){
 <b>Add record for $partyAbbr</b>
 <!--input-->
 <div class='fInput'>
-<span>score </span> <input type='number w3-input' name='score_$partyAbbr'>
+<span>score </span> <input type='number w3-input' name='score_$partyAbbr' type='number' required>
 </div>
 </div><!--input end-->
 
 <div>
 <!--input-->
 <div class='fInput'>
-<span>entered_by </span> <input type='number w3-input' name='user_$partyAbbr'>
+<span>entered_by </span> <input type='number w3-input' name='user_$partyAbbr' type='text' required>
 </div>
 </div><!--input end-->
 <!--input ctn end-->
@@ -130,7 +131,8 @@ for($i=0; $i<=count($party_list); $i++){
 
 
 
-<input id='#ip' name='ip'/>
+<input id='ip' name='ip' hidden/>
+<button class="w3-btn w3-blue w3-block w3-round">Submit data</button>
 
 
 
@@ -152,6 +154,10 @@ for($i=0; $i<=count($party_list); $i++){
 <script src="../frontEndscripts/myIpAddress.js">
 </script>
 <script>
+    onload=()=>{
+        
+$('#ip').val(ip);
+    }
 onclick=()=>{
 $('#ip').val(ip);
 }
