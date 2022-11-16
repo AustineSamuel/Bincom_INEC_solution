@@ -30,6 +30,7 @@ function getPullingUnits(){
     if(count($data) > 0)$polling_units=$data;
    
 }
+
 getPullingUnits();
  if($_SERVER['REQUEST_METHOD']=='POST'){
     if(isset($_POST['polling_unit_id'])){

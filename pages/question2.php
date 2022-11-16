@@ -12,20 +12,20 @@ require_once '../backendsScripts/question2.solution.php';
     <title>Austine's Solution</title>
     <link rel="stylesheet" href="../lib/cssLibrary.css">
     <link rel="stylesheet" href="../lib/w3css.css">
-    <script src="lib/jquery.js">
+    <script src="../lib/jquery.js">
       /lib/lib / jquery3.js
-    </script> <script src="lib/MfunctionsLap.js"></script>
+    </script> <script src="../lib/MfunctionsLap.js"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="../https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   
     <link rel="stylesheet" href="../lib/fontawesome-free-6.2.0-web/css/all.css">
     
     <link rel="shortcut icon" href="../images/appImages/icon.png" type="image/x-icon">
    
   <link rel="stylesheet" href="../styles/index.css">
-    <script src="lib/angular-1.8.2/angular.js"></script>
-    <script src="lib/jquery3.js"></script>
-    <script src="scripts/index.angular.js"></script>
+    <script src="../lib/angular-1.8.2/angular.js"></script>
+    <script src="../lib/jquery3.js"></script>
+    <script src="../scripts/index.angular.js"></script>
    
 </head>
 <body>
@@ -61,7 +61,7 @@ create a page to display the summed total result of all polling units under any 
         <div class="questionCtn">
             <button  onclick="href('../index.php')" >Question 1</button>
             <button active>Question 2</button>
-            <button onclick="href('pages/question3.php')"> Question 3</button>
+            <button onclick="href('question3.php')"> Question 3</button>
         </div>
 
 
@@ -72,7 +72,7 @@ create a page to display the summed total result of all polling units under any 
          <span class="fa fa-ellipsis-v"></span>
    </div>
    <div class="flexStart">
-    <form action="" method="post" action='./index.solution.php' class="flexStart" style="min-width:100%;">
+    <form method="post"class="flexStart" style="min-width:100%;">
     <select  name='lga_id' class="w3-input w3-block">
         <?php //showing pollling units to select
 
@@ -97,6 +97,7 @@ create a page to display the summed total result of all polling units under any 
     </select>
     <button type='submit' id="go">Go</button>
     </form>
+
 </div>
 </div><!--end input container-->
 

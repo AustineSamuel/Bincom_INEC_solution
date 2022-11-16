@@ -4,10 +4,11 @@ require_once '../lib/app.functions.php';
 
 /**
  * i get lga id from user
- * load the lga from server
+ * load the lga data from server using the id
  * then load all polling units under that lga
- * loop through the polling units and get with function of complexity Bug O(n*2) 
+ * loop through the polling units and get with function of complexity Big O(n*2) 
  * add all the result together and show to user
+ * if not data available it show error message that NO data Available
  */
 
 $show_message=false;
